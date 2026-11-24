@@ -1,0 +1,152 @@
+{
+  "sales_source_rows": 112,
+  "sales_bronze_rows": 112,
+  "sales_silver_rows": 96,
+  "duplicates_removed": 6,
+  "deduplicated_rows": 106,
+  "invalid_rows_removed": 10,
+  "invalid_quantity_count": 5,
+  "invalid_price_count": 5,
+  "invalid_date_count": 1,
+  "products_rows": 6,
+  "stores_rows": 4,
+  "joined_rows": 96,
+  "unmatched_product_keys": 0,
+  "unmatched_store_keys": 0,
+  "gold_store_count": 4,
+  "transaction_count": 96,
+  "total_quantity": 289,
+  "total_revenue": "2680.90",
+  "store_results": {
+    "S01": {
+      "StoreName": "Paris Centre",
+      "Region": "Ile-de-France",
+      "TransactionCount": 24,
+      "TotalQuantity": 70,
+      "TotalRevenue": "671.30"
+    },
+    "S02": {
+      "StoreName": "Versailles",
+      "Region": "Ile-de-France",
+      "TransactionCount": 24,
+      "TotalQuantity": 74,
+      "TotalRevenue": "680.00"
+    },
+    "S03": {
+      "StoreName": "Lyon Centre",
+      "Region": "Auvergne-Rhone-Alpes",
+      "TransactionCount": 24,
+      "TotalQuantity": 73,
+      "TotalRevenue": "642.95"
+    },
+    "S04": {
+      "StoreName": "Grenoble",
+      "Region": "Auvergne-Rhone-Alpes",
+      "TransactionCount": 24,
+      "TotalQuantity": 72,
+      "TotalRevenue": "686.65"
+    }
+  },
+  "region_results": {
+    "Auvergne-Rhone-Alpes": {
+      "TransactionCount": 48,
+      "TotalQuantity": 145,
+      "TotalRevenue": "1329.60"
+    },
+    "Ile-de-France": {
+      "TransactionCount": 48,
+      "TotalQuantity": 144,
+      "TotalRevenue": "1351.30"
+    }
+  },
+  "source_sha256": {
+    "sales.csv": "b230597bc507c96d5948f331309bd82280ea11c3c343451fae5a75c65b4f5446",
+    "products.csv": "0798649c3f5fe2a19d1c996c6b54c1b3779132b7a918030e5ac2fd85e8699cc1",
+    "stores.csv": "25b688da14aad8b9b26c6387b20466a6cf82254ee2c645f8eca7c2de81e89c71"
+  },
+  "schemas": {
+    "sales_bronze": [
+      [
+        "SaleID",
+        "string"
+      ],
+      [
+        "SaleDate",
+        "string"
+      ],
+      [
+        "StoreID",
+        "string"
+      ],
+      [
+        "ProductID",
+        "string"
+      ],
+      [
+        "Quantity",
+        "string"
+      ],
+      [
+        "UnitPrice",
+        "string"
+      ]
+    ],
+    "sales_silver": [
+      [
+        "SaleID",
+        "string"
+      ],
+      [
+        "SaleDate",
+        "date"
+      ],
+      [
+        "StoreID",
+        "string"
+      ],
+      [
+        "ProductID",
+        "string"
+      ],
+      [
+        "Quantity",
+        "int"
+      ],
+      [
+        "UnitPrice",
+        "decimal(12,2)"
+      ]
+    ],
+    "sales_by_store": [
+      [
+        "StoreID",
+        "string"
+      ],
+      [
+        "StoreName",
+        "string"
+      ],
+      [
+        "Region",
+        "string"
+      ],
+      [
+        "TransactionCount",
+        "bigint"
+      ],
+      [
+        "TotalQuantity",
+        "bigint"
+      ],
+      [
+        "TotalRevenue",
+        "decimal(20,2)"
+      ]
+    ]
+  },
+  "content_sha256": {
+    "sales_bronze": "552bd0d78bd40d96ab1d80f7c9f05486bda2d1ff27ed21a23743515d902e7ca0",
+    "sales_silver": "b811d0e421687bbda634ec094393439286a5522c1ba74490207d7a01a04bd4cc",
+    "sales_by_store": "ba4924bd3fdc5b9c647badcd4fb71cf9a9191d947b715d9203442f95aefdc630"
+  }
+}
